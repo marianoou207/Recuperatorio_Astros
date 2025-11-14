@@ -1,0 +1,62 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>448</x><y>693</y><w>203</w><h>140</h></coordinates><panel_attributes>EstacionDeObservacion
+--
+- astros: ArrayList&lt;Astro&gt;
+--
++ EstacionDeObservacion()
++ agregarAstro(Astro a): void
++ mostrarAstros(): void
++ generarCamposMagneticos(): void
++ modificarOrbitas(): void
++ filtrarPorTipoRadiacion(TipoRadiacion tipo): void
++ filtrarPorTipoDeAstro(String tipoAstro): void
+- buscarAstro(String nombre, String region): Astro</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>462</x><y>882</y><w>147</w><h>35</h></coordinates><panel_attributes>AstroException
+--
++ AstroException(String message)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>427</x><y>392</y><w>231</w><h>133</h></coordinates><panel_attributes>&lt;abstract&gt;
+Astro
+--
+- nombre: String
+- region: String
+- tipoDeRadiacion: TipoRadiacion
+--
++ Astro(String nombre, String region, TipoRadiacion tipo)
++ getNombre(): String
++ getRegion(): String
++ getTipoDeRadiacion(): TipoRadiacion
++ equals(Object o): boolean
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>714</x><y>287</y><w>70</w><h>63</h></coordinates><panel_attributes>&lt;enum&gt;
+TipoRadiacion
+--
+• INFRARROJA
+• ULTRAVIOLETA
+• RAYOS_X</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>91</x><y>595</y><w>294</w><h>84</h></coordinates><panel_attributes>Estrella
+--
+- temperaturaSuperficial: double
+--
++ Estrella(String nombre, String region, TipoRadiacion tipo, double temp)
++ getTemperaturaSuperficial(): double
++ generarCampoMagnetico(): void
++ modificarOrbita(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>735</x><y>595</y><w>322</w><h>77</h></coordinates><panel_attributes>Planeta
+--
+- poseeAtmosfera: boolean
+--
++ Planeta(String nombre, String region, TipoRadiacion tipo, boolean atmosfera)
++ isPoseeAtmosfera(): boolean
++ generarCampoMagnetico(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>406</x><y>595</y><w>308</w><h>77</h></coordinates><panel_attributes>Cometa
+--
+- periodoOrbital: double
+--
++ Cometa(String nombre, String region, TipoRadiacion tipo, double periodo)
++ getPeriodoOrbital(): double
++ modificarOrbita(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>266</x><y>287</y><w>147</w><h>42</h></coordinates><panel_attributes>&lt;interface&gt;
+GeneradorCampoMagnetico
+--
++ generarCampoMagnetico(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>504</x><y>287</y><w>105</w><h>42</h></coordinates><panel_attributes>&lt;interface&gt;
+ModificadorOrbita
+--
++ modificarOrbita(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>826</y><w>56</w><h>70</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>413</y><w>497</w><h>364</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+-astros 0..*</panel_attributes><additional_attributes>20;10;630;10;630;500;10;500</additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>308</y><w>399</w><h>504</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>200;10;530;10;542;695;10;700</additional_attributes></element><element><id>Relation</id><coordinates><x>651</x><y>343</y><w>182</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+-tipoDeRadiacion 1</panel_attributes><additional_attributes>140;10;140;160;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>651</x><y>490</y><w>245</w><h>119</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;330;150</additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>518</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>490</y><w>217</w><h>119</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>290;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>322</y><w>98</w><h>287</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>120;10;10;390</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>301</y><w>294</w><h>308</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>400;10;330;10;200;190;10;420</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>189</y><w>546</w><h>420</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;140;10;10;750;10;760;580</additional_attributes></element><element><id>Relation</id><coordinates><x>602</x><y>301</y><w>105</w><h>308</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;130;10;130;420</additional_attributes></element><element><id>Relation</id><coordinates><x>56</x><y>0</y><w>133</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;170;10</additional_attributes></element></diagram>
